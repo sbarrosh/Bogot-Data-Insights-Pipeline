@@ -7,7 +7,7 @@ class WeatherETL:
     @staticmethod
     def run():
 
-        FILE_PATH = "data/weather.json"
+        FILE_PATH = "dashboard/data/weather.json"
 
         # -----------------------
         # 1. Leer datos existentes
