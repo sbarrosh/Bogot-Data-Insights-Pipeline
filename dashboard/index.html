@@ -10,6 +10,7 @@
 
   <h1>🌦️ Bogotá Weather Dashboard</h1>
 
+  <!-- KPIs -->
   <div class="kpis">
     <div class="card">
       <h3>Última temperatura</h3>
@@ -19,20 +20,32 @@
       <h3>Humedad</h3>
       <p id="humidity"></p>
     </div>
+    <div class="card">
+      <h3>Temp promedio</h3>
+      <p id="avgTemp"></p>
+    </div>
+    <div class="card">
+      <h3>Max</h3>
+      <p id="maxTemp"></p>
+    </div>
+    <div class="card">
+      <h3>Min</h3>
+      <p id="minTemp"></p>
+    </div>
   </div>
 
+  <!-- Filtros -->
   <div class="filters">
     <button onclick="updateView('24h')">24h</button>
     <button onclick="updateView('7d')">7 días</button>
     <button onclick="updateView('all')">Todo</button>
   </div>
 
+  <!-- Charts -->
   <canvas id="tempChart"></canvas>
   <canvas id="humidityChart"></canvas>
+  <canvas id="dailyChart"></canvas>
 
   <script src="script.js"></script>
 </body>
-
-
-
 </html>
