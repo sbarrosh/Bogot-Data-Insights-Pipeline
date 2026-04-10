@@ -28,3 +28,18 @@ canvas {
   background: white;
   border-radius: 10px;
 }
+
+.filters {
+  margin: 20px 0;
+  text-align: center;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background: #38bdf8;
+  color: black;
+  cursor: pointer;
+}

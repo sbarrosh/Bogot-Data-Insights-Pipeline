@@ -40,3 +40,26 @@ fetch("data/weather.json")
     });
 
   });
+
+  let allData = [];
+
+fetch("data/weather.json")
+  .then(res => res.json())
+  .then(data => {
+    allData = data.data;
+    updateView("24h"); // default
+  });
+
+function updateView(range) {
+  let filtered;
+
+  if (range === "24h") {
+    filtered = allData.slice(-24);
+  } else if (range === "7d") {
+    filtered = allData.slice(-168);
+  } else {
+    filtered = allData;
+  }
+
+  renderCharts(filtered);
+}
