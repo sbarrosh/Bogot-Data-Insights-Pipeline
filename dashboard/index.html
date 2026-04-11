@@ -8,44 +8,94 @@
 </head>
 <body>
 
-  <h1>🌦️ Bogotá Weather Dashboard</h1>
+<div class="dashboard">
 
-  <!-- KPIs -->
+  <!-- TITLE -->
+  <div class="title">
+    <h1>🌦️ Bogotá Weather Dashboard</h1>
+
+    <!-- 🔥 DESCRIPCIÓN -->
+    <p class="description">
+      Interactive dashboard that visualizes historical and forecast weather data for Bogotá,
+      combining real-time data ingestion, transformation, and analytics into a modern data product.
+    </p>
+
+    <div id="dateRange" class="date-range"></div>
+  </div>
+
+  <!-- MODE -->
+  <div class="mode-toggle">
+    <button onclick="setMode('historical', this)" class="active">History</button>
+    <button onclick="setMode('forecast', this)">Forecast</button>
+  </div>
+
+  <!-- KPI -->
   <div class="kpis">
-    <div class="card">
-      <h3>Última temperatura</h3>
+    <div class="card temp-card">
       <p id="temp"></p>
+      <span>Temperature</span>
     </div>
-    <div class="card">
-      <h3>Humedad</h3>
+
+    <div class="card humidity-card">
       <p id="humidity"></p>
+      <span>Humidity</span>
     </div>
-    <div class="card">
-      <h3>Temp promedio</h3>
+
+    <div class="card avg-card">
       <p id="avgTemp"></p>
+      <span>Average</span>
     </div>
-    <div class="card">
-      <h3>Max</h3>
+
+    <div class="card max-card">
       <p id="maxTemp"></p>
+      <span>Max</span>
     </div>
-    <div class="card">
-      <h3>Min</h3>
+
+    <div class="card min-card">
       <p id="minTemp"></p>
+      <span>Min</span>
     </div>
   </div>
 
-  <!-- Filtros -->
-  <div class="filters">
-    <button onclick="updateView('24h')">24h</button>
-    <button onclick="updateView('7d')">7 días</button>
-    <button onclick="updateView('all')">Todo</button>
+  <!-- INSIGHTS -->
+  <div class="insights">
+    <h3>Insights</h3>
+    <div id="insightsList" class="insights-grid"></div>
   </div>
 
-  <!-- Charts -->
-  <canvas id="tempChart"></canvas>
-  <canvas id="humidityChart"></canvas>
-  <canvas id="dailyChart"></canvas>
+  <!-- DAILY FORECAST -->
+  <div class="daily-forecast">
+    <h3>📅 Next Days</h3>
+    <div id="dailyForecastContainer" class="daily-grid"></div>
+  </div>
 
-  <script src="script.js"></script>
+  
+
+  <!-- FILTERS -->
+  <div class="filters">
+    <h3>Filters</h3>
+
+    <button onclick="updateView('24h', this)">24 hours</button>
+    <button onclick="updateView('7d', this)">7 days</button>
+    <button onclick="updateView('all', this)">Alls</button>
+  </div>
+
+</div>
+
+<!-- CHARTS -->
+  <div class="charts-row">
+    <div class="chart">
+      <h3>Temperature</h3>
+      <canvas id="tempChart"></canvas>
+    </div>
+
+    <div class="chart">
+      <h3>Humidity</h3>
+      <canvas id="humidityChart"></canvas>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
